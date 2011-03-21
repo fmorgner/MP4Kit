@@ -3,7 +3,7 @@
  *  MP4Kit
  *
  *  Created by Felix Morgner on 21.10.10.
- *  Copyright 2010 Bühler AG. All rights reserved.
+ *  Copyright 2010 Felix Morgner. All rights reserved.
  *
  */
 #include "MP4ParentAtom.h"
