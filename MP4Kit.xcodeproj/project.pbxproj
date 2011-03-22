@@ -10,10 +10,8 @@
 		C757BB4813376306002C43F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C757BB4613376306002C43F3 /* InfoPlist.strings */; };
 		C757BB5A13376408002C43F3 /* MP4Container.h in Headers */ = {isa = PBXBuildFile; fileRef = C757BB5413376408002C43F3 /* MP4Container.h */; };
 		C757BB5B13376408002C43F3 /* MP4Container.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5513376408002C43F3 /* MP4Container.cpp */; };
-		C757BB5C13376408002C43F3 /* MP4Atom.h in Headers */ = {isa = PBXBuildFile; fileRef = C757BB5613376408002C43F3 /* MP4Atom.h */; };
-		C757BB5D13376408002C43F3 /* MP4Atom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5713376408002C43F3 /* MP4Atom.cpp */; };
-		C757BB5E13376408002C43F3 /* MP4ParentAtom.h in Headers */ = {isa = PBXBuildFile; fileRef = C757BB5813376408002C43F3 /* MP4ParentAtom.h */; };
-		C757BB5F13376408002C43F3 /* MP4ParentAtom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5913376408002C43F3 /* MP4ParentAtom.cpp */; };
+		C757BB5C13376408002C43F3 /* FMMP4Atom.h in Headers */ = {isa = PBXBuildFile; fileRef = C757BB5613376408002C43F3 /* FMMP4Atom.h */; };
+		C757BB5D13376408002C43F3 /* FMMP4Atom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5713376408002C43F3 /* FMMP4Atom.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +22,8 @@
 		C757BB4913376306002C43F3 /* MP4Kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MP4Kit-Prefix.pch"; path = "../MP4Kit-Prefix.pch"; sourceTree = "<group>"; };
 		C757BB5413376408002C43F3 /* MP4Container.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Container.h; sourceTree = "<group>"; };
 		C757BB5513376408002C43F3 /* MP4Container.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = MP4Container.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		C757BB5613376408002C43F3 /* MP4Atom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MP4Atom.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		C757BB5713376408002C43F3 /* MP4Atom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = MP4Atom.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
-		C757BB5813376408002C43F3 /* MP4ParentAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = MP4ParentAtom.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		C757BB5913376408002C43F3 /* MP4ParentAtom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = MP4ParentAtom.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		C757BB5613376408002C43F3 /* FMMP4Atom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FMMP4Atom.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		C757BB5713376408002C43F3 /* FMMP4Atom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = FMMP4Atom.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +68,8 @@
 			children = (
 				C757BB5413376408002C43F3 /* MP4Container.h */,
 				C757BB5513376408002C43F3 /* MP4Container.cpp */,
-				C757BB5613376408002C43F3 /* MP4Atom.h */,
-				C757BB5713376408002C43F3 /* MP4Atom.cpp */,
-				C757BB5813376408002C43F3 /* MP4ParentAtom.h */,
-				C757BB5913376408002C43F3 /* MP4ParentAtom.cpp */,
+				C757BB5613376408002C43F3 /* FMMP4Atom.h */,
+				C757BB5713376408002C43F3 /* FMMP4Atom.cpp */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -99,8 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C757BB5A13376408002C43F3 /* MP4Container.h in Headers */,
-				C757BB5C13376408002C43F3 /* MP4Atom.h in Headers */,
-				C757BB5E13376408002C43F3 /* MP4ParentAtom.h in Headers */,
+				C757BB5C13376408002C43F3 /* FMMP4Atom.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,8 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C757BB5B13376408002C43F3 /* MP4Container.cpp in Sources */,
-				C757BB5D13376408002C43F3 /* MP4Atom.cpp in Sources */,
-				C757BB5F13376408002C43F3 /* MP4ParentAtom.cpp in Sources */,
+				C757BB5D13376408002C43F3 /* FMMP4Atom.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

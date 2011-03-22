@@ -6,7 +6,7 @@
  *  Copyright 2010 Felix Morgner. All rights reserved.
  *
  */
-#include "MP4ParentAtom.h"
+#include "FMMP4Atom.h"
 
 #include <string.h>
 #include <map>
@@ -22,7 +22,7 @@ class MP4Container
 		
 	protected:
 		map<char*, int> m_atomPositionMap;
-		list<MP4ParentAtom*> m_loParentAtoms;
+		list<FMMP4Atom*> m_loParentAtoms;
 
 	protected:
 		unsigned int bytesToInt(char* bytes);
