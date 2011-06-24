@@ -13,24 +13,25 @@
 #include <stdlib.h>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 class FMMP4Atom
 	{
 	public:
 		FMMP4Atom();
-		FMMP4Atom(std::string atomName);
+		FMMP4Atom(std::string sName);
 		~FMMP4Atom();
 	
 	public:
-		std::string AtomNameGet();
-		int AtomLengthGet();
-		void AtomChildAdd(FMMP4Atom* child);
-		FMMP4Atom* AtomChildGet(std::string atomName);
+		std::string NameGet();
+		int LengthGet();
+		void ChildAdd(FMMP4Atom* child);
+		FMMP4Atom* ChildGet(FMMP4Atom* atom);
 
 	protected:
-		std::string m_sAtomName;
-		int m_nAtomLength;
+		std::string m_sName;
 		std::vector<FMMP4Atom*> m_lChildren;
+		int m_nLength;
 	};
 
 #endif

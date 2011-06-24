@@ -9,16 +9,18 @@
 
 #include "FMMP4Atom.h"
 
+using namespace std;
+
 #pragma mark Construction and Deconstruction:
 
 FMMP4Atom::FMMP4Atom()
 	{
-	m_sAtomName = std::string("");
+	m_sName = string("");
 	}
 
-FMMP4Atom::FMMP4Atom(std::string atomName)
+FMMP4Atom::FMMP4Atom(string sName)
 	{
-	m_sAtomName = atomName;
+	m_sName = sName;
 	}
 
 FMMP4Atom::~FMMP4Atom()
@@ -28,22 +30,26 @@ FMMP4Atom::~FMMP4Atom()
 #pragma mark 
 #pragma mark Public accessors:
 
-std::string FMMP4Atom::AtomNameGet()
+std::string FMMP4Atom::NameGet()
 	{
-	return m_sAtomName;
+	return m_sName;
 	}
 
-int FMMP4Atom::AtomLengthGet()
+int FMMP4Atom::LengthGet()
 	{
-	return m_nAtomLength;
+	return m_nLength;
 	}
 
-void FMMP4Atom::AtomChildAdd(FMMP4Atom* child)
+void FMMP4Atom::ChildAdd(FMMP4Atom* child)
 	{
 	m_lChildren.push_back(child);
 	}
 
-FMMP4Atom* FMMP4Atom::AtomChildGet(std::string atomName)
+FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* atom)
 	{
-	return NULL;
+	vector<FMMP4Atom*>::iterator it;
+	
+	it = find(m_lChildren.begin(), m_lChildren.end(), atom);
+	
+	return *it;
 	}
