@@ -28,12 +28,14 @@ class FMMP4Atom
 		unsigned long LengthGet();
 
 		void        ChildAdd(FMMP4Atom*  poAtom);
+		
 		FMMP4Atom*  ChildGet(FMMP4Atom*  poAtom);
 		FMMP4Atom*  ChildGet(std::string sAtomName);
 
 	protected:
 		std::string m_sName;
-		std::vector<FMMP4Atom*> m_lChildren;
+		std::vector<FMMP4Atom*> m_vChildren;
+		std::vector<char> m_vData;
 		int m_nLength;
 	};
 

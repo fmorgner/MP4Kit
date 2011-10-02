@@ -40,14 +40,14 @@ unsigned long FMMP4Atom::LengthGet()
 
 void FMMP4Atom::ChildAdd(FMMP4Atom* poAtom)
 	{
-	m_lChildren.push_back(poAtom);
+	m_vChildren.push_back(poAtom);
 	}
 
 FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* poAtom)
 	{
 	std::vector<FMMP4Atom*>::iterator it;
 	
-	it = find(m_lChildren.begin(), m_lChildren.end(), poAtom);
+	it = find(m_vChildren.begin(), m_vChildren.end(), poAtom);
 	
 	return *it;
 	}
@@ -56,7 +56,7 @@ FMMP4Atom* FMMP4Atom::ChildGet(std::string sAtomName)
 	{
 	FMMP4Atom* foundAtom = NULL;
 	
-	for(std::vector<FMMP4Atom*>::iterator it = m_lChildren.begin(); it != m_lChildren.end(); it++)
+	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
 		{
 		if(!(((FMMP4Atom*)*it)->NameGet().compare(sAtomName)))
 			{
