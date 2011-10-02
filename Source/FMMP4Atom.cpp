@@ -9,16 +9,14 @@
 
 #include "FMMP4Atom.h"
 
-using namespace std;
-
 #pragma mark Construction and Deconstruction:
 
 FMMP4Atom::FMMP4Atom()
 	{
-	m_sName = string("");
+	m_sName = std::string("");
 	}
 
-FMMP4Atom::FMMP4Atom(string sName)
+FMMP4Atom::FMMP4Atom(std::string sName)
 	{
 	m_sName = sName;
 	}
@@ -35,21 +33,38 @@ std::string FMMP4Atom::NameGet()
 	return m_sName;
 	}
 
-int FMMP4Atom::LengthGet()
+unsigned long FMMP4Atom::LengthGet()
 	{
 	return m_nLength;
 	}
 
-void FMMP4Atom::ChildAdd(FMMP4Atom* child)
+void FMMP4Atom::ChildAdd(FMMP4Atom* poAtom)
 	{
-	m_lChildren.push_back(child);
+	m_lChildren.push_back(poAtom);
 	}
 
-FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* atom)
+FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* poAtom)
 	{
-	vector<FMMP4Atom*>::iterator it;
+	std::vector<FMMP4Atom*>::iterator it;
 	
-	it = find(m_lChildren.begin(), m_lChildren.end(), atom);
+	it = find(m_lChildren.begin(), m_lChildren.end(), poAtom);
 	
 	return *it;
 	}
+
+FMMP4Atom* FMMP4Atom::ChildGet(std::string sAtomName)
+	{
+	FMMP4Atom* foundAtom = NULL;
+	
+	for(std::vector<FMMP4Atom*>::iterator it = m_lChildren.begin(); it != m_lChildren.end(); it++)
+		{
+		if(!(((FMMP4Atom*)*it)->NameGet().compare(sAtomName)))
+			{
+			foundAtom = *it;
+			break;
+			}
+		}
+	
+	return foundAtom;
+	}
+
