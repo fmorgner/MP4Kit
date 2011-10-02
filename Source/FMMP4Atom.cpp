@@ -13,7 +13,7 @@
 
 FMMP4Atom::FMMP4Atom()
 	{
-	m_sName = std::string("");
+	m_sName = std::string();
 	m_vData = std::vector<unsigned char>();
 	}
 
