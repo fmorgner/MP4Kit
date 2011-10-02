@@ -16,10 +16,13 @@ int main (int argc, const char * argv[])
 	FMMP4Atom atom2(" two");
 	FMMP4Atom atom3("thre");
 	
-	atom1.AtomChildAdd(&atom2);
+	atom1.ChildAdd(&atom2);
 
-	FMMP4Atom *found = atom1.AtomChildGet(&atom2);
-	
+	FMMP4Atom *found = atom1.ChildGet(&atom2);
+	FMMP4Atom *otherFound = atom1.ChildGet(" two");
+
+	found = NULL;
+	otherFound = NULL;
 	return 0;
 	}
 

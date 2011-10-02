@@ -11,20 +11,9 @@
 		C757BB5C13376408002C43F3 /* FMMP4Atom.h in Headers */ = {isa = PBXBuildFile; fileRef = C757BB5613376408002C43F3 /* FMMP4Atom.h */; };
 		C757BB5D13376408002C43F3 /* FMMP4Atom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5713376408002C43F3 /* FMMP4Atom.cpp */; };
 		C79ABA70133A03600074BDB7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C79ABA6F133A03600074BDB7 /* main.cpp */; };
-		C7AC817A143873AF00E6743C /* FMMP4Atom.h in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5613376408002C43F3 /* FMMP4Atom.h */; };
-		C7AC817B143873AF00E6743C /* FMMP4Atom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5713376408002C43F3 /* FMMP4Atom.cpp */; };
-		C7AC817C143873DB00E6743C /* mp4kit.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AC816B1438738D00E6743C /* mp4kit.dylib */; };
+		C79ABA78133A04820074BDB7 /* FMMP4Atom.h in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5613376408002C43F3 /* FMMP4Atom.h */; };
+		C79ABA79133A04820074BDB7 /* FMMP4Atom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C757BB5713376408002C43F3 /* FMMP4Atom.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C7AC817D143873E100E6743C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C757BB3013376306002C43F3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C7AC816A1438738D00E6743C;
-			remoteInfo = mp4kit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C79ABA6A133A03600074BDB7 /* CopyFiles */ = {
@@ -49,7 +38,6 @@
 		C79ABA6C133A03600074BDB7 /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79ABA6F133A03600074BDB7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C79ABA71133A03600074BDB7 /* Demo.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Demo.1; sourceTree = "<group>"; };
-		C7AC816B1438738D00E6743C /* mp4kit.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = mp4kit.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +49,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C79ABA69133A03600074BDB7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7AC817C143873DB00E6743C /* mp4kit.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C7AC81681438738D00E6743C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -94,7 +74,6 @@
 			children = (
 				C757BB3A13376306002C43F3 /* MP4Kit.framework */,
 				C79ABA6C133A03600074BDB7 /* Demo */,
-				C7AC816B1438738D00E6743C /* mp4kit.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,13 +126,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7AC81691438738D00E6743C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -186,29 +158,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				C7AC817E143873E100E6743C /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
 			productReference = C79ABA6C133A03600074BDB7 /* Demo */;
 			productType = "com.apple.product-type.tool";
-		};
-		C7AC816A1438738D00E6743C /* mp4kit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C7AC81781438738D00E6743C /* Build configuration list for PBXNativeTarget "mp4kit" */;
-			buildPhases = (
-				C7AC81671438738D00E6743C /* Sources */,
-				C7AC81681438738D00E6743C /* Frameworks */,
-				C7AC81691438738D00E6743C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = mp4kit;
-			productName = mp4kit;
-			productReference = C7AC816B1438738D00E6743C /* mp4kit.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
@@ -231,7 +185,6 @@
 			projectRoot = "";
 			targets = (
 				C757BB3913376306002C43F3 /* MP4Kit */,
-				C7AC816A1438738D00E6743C /* mp4kit */,
 				C79ABA6B133A03600074BDB7 /* Demo */,
 			);
 		};
@@ -261,28 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79ABA78133A04820074BDB7 /* FMMP4Atom.h in Sources */,
+				C79ABA79133A04820074BDB7 /* FMMP4Atom.cpp in Sources */,
 				C79ABA70133A03600074BDB7 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7AC81671438738D00E6743C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C7AC817A143873AF00E6743C /* FMMP4Atom.h in Sources */,
-				C7AC817B143873AF00E6743C /* FMMP4Atom.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C7AC817E143873E100E6743C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C7AC816A1438738D00E6743C /* mp4kit */;
-			targetProxy = C7AC817D143873E100E6743C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C757BB4613376306002C43F3 /* InfoPlist.strings */ = {
@@ -399,38 +337,6 @@
 			};
 			name = Release;
 		};
-		C7AC81761438738D00E6743C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C7AC81771438738D00E6743C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,15 +363,6 @@
 			buildConfigurations = (
 				C79ABA72133A03600074BDB7 /* Debug */,
 				C79ABA73133A03600074BDB7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C7AC81781438738D00E6743C /* Build configuration list for PBXNativeTarget "mp4kit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C7AC81761438738D00E6743C /* Debug */,
-				C7AC81771438738D00E6743C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
