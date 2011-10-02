@@ -14,11 +14,19 @@
 FMMP4Atom::FMMP4Atom()
 	{
 	m_sName = std::string("");
+	m_vData = std::vector<unsigned char>();
 	}
 
 FMMP4Atom::FMMP4Atom(std::string sName)
 	{
 	m_sName = sName;
+	m_vData = std::vector<unsigned char>();
+	}
+
+FMMP4Atom::FMMP4Atom(std::string sName, std::vector<unsigned char> vData)
+	{
+	m_sName = sName;
+	m_vData = vData;
 	}
 
 FMMP4Atom::~FMMP4Atom()
@@ -58,7 +66,7 @@ FMMP4Atom* FMMP4Atom::ChildGet(std::string sAtomName)
 	
 	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
 		{
-		if(!(((FMMP4Atom*)*it)->NameGet().compare(sAtomName)))
+		if(((FMMP4Atom*)*it)->NameGet() == sAtomName)
 			{
 			foundAtom = *it;
 			break;

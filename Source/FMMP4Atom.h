@@ -20,6 +20,7 @@ class FMMP4Atom
 	public:
 		 FMMP4Atom();
 		 FMMP4Atom(std::string sName);
+		 FMMP4Atom(std::string sName, std::vector<unsigned char> vData);
 		~FMMP4Atom();
 	
 	public:
@@ -35,8 +36,8 @@ class FMMP4Atom
 	protected:
 		std::string m_sName;
 		
-		std::vector<FMMP4Atom*> m_vChildren;
-		std::vector<char>       m_vData;
+		std::vector<FMMP4Atom*>    m_vChildren;
+		std::vector<unsigned char> m_vData;
 		
 		int m_nLength;
 	};
