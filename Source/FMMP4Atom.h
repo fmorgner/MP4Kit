@@ -18,14 +18,15 @@
 class FMMP4Atom
 	{
 	public:
-		FMMP4Atom();
-		FMMP4Atom(std::string sName);
+		 FMMP4Atom();
+		 FMMP4Atom(std::string sName);
 		~FMMP4Atom();
 	
 	public:
+		void ChildAdd(FMMP4Atom* child);
+
 		std::string NameGet();
 		int LengthGet();
-		void ChildAdd(FMMP4Atom* child);
 		FMMP4Atom* ChildGet(FMMP4Atom* atom);
 
 	protected:
