@@ -9,8 +9,6 @@
 
 #include "FMMP4Atom.h"
 
-using namespace std;
-
 #pragma mark Construction and Deconstruction:
 
 FMMP4Atom::FMMP4Atom()
@@ -42,14 +40,30 @@ int FMMP4Atom::LengthGet()
 
 void FMMP4Atom::ChildAdd(FMMP4Atom* child)
 	{
-	m_lChildren.push_back(child);
+	m_vChildren.push_back(child);
 	}
 
-FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* atom)
+FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* poAtom)
 	{
-	vector<FMMP4Atom*>::iterator it;
+	std::vector<FMMP4Atom*>::iterator it;
 	
-	it = find(m_lChildren.begin(), m_lChildren.end(), atom);
+	it = find(m_vChildren.begin(), m_vChildren.end(), poAtom);
 	
 	return *it;
+	}
+
+FMMP4Atom* FMMP4Atom::ChildGet(string sAtomName)
+	{
+	FMMP4Atom* foundAtom;
+	
+	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
+		{
+		if(!((FMMP4Atom*)*it)->NameGet().compare(sAtomName))
+			{
+			foundAtom = *it;
+			break;
+			}
+		}
+	
+	return foundAtom;
 	}
