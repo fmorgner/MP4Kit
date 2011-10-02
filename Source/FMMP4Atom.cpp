@@ -73,7 +73,7 @@ FMMP4Atom* FMMP4Atom::ChildGet(std::vector<unsigned char> vData)
 	
 	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
 		{
-		if(equal(((FMMP4Atom*)*it)->DataGet().begin() , ((FMMP4Atom*)*it)->DataGet().end() , vData.begin()))
+		if(!equal(((FMMP4Atom*)*it)->DataGet().begin() , ((FMMP4Atom*)*it)->DataGet().end() , vData.begin()))
 			{
 			foundAtom = *it;
 			break;
@@ -89,7 +89,7 @@ std::vector<FMMP4Atom*> FMMP4Atom::ChildrenGet(std::string sAtomName)
 	
 	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
 		{
-		if(((FMMP4Atom*)*it)->NameGet() == sAtomName)
+		if((*it)->NameGet() == sAtomName)
 			{
 			vFoundAtoms.push_back(*it);
 			}
