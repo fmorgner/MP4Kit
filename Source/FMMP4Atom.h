@@ -23,11 +23,13 @@ class FMMP4Atom
 		~FMMP4Atom();
 	
 	public:
-		void ChildAdd(FMMP4Atom* child);
-
 		std::string NameGet();
-		int LengthGet();
-		FMMP4Atom* ChildGet(FMMP4Atom* atom);
+
+		unsigned long LengthGet();
+
+		void        ChildAdd(FMMP4Atom*  poAtom);
+		FMMP4Atom*  ChildGet(FMMP4Atom*  poAtom);
+		FMMP4Atom*  ChildGet(std::string sAtomName);
 
 	protected:
 		std::string m_sName;
