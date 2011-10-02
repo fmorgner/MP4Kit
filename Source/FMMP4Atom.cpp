@@ -17,18 +17,21 @@ FMMP4Atom::FMMP4Atom()
 	{
 	m_sName = std::string();
 	m_vData = std::vector<unsigned char>();
+	m_nLength = m_vData.size();
 	}
 
 FMMP4Atom::FMMP4Atom(std::string sName)
 	{
 	m_sName = sName;
 	m_vData = std::vector<unsigned char>();
+	m_nLength = m_vData.size();
 	}
 
 FMMP4Atom::FMMP4Atom(std::string sName, std::vector<unsigned char> vData)
 	{
 	m_sName = sName;
 	m_vData = vData;
+	m_nLength = m_vData.size();
 	}
 
 FMMP4Atom::~FMMP4Atom()
@@ -105,6 +108,7 @@ std::vector<FMMP4Atom*> FMMP4Atom::ChildrenGet(std::string sAtomName)
 void FMMP4Atom::DataSet(std::vector<unsigned char> vData)
 	{
 	m_vData = vData;
+	m_nLength = m_vData.size();
 	}
 
 void FMMP4Atom::DataAppend(std::vector<unsigned char> vData)
@@ -113,6 +117,7 @@ void FMMP4Atom::DataAppend(std::vector<unsigned char> vData)
 		{
 		m_vData.push_back(*it);
 		}
+	m_nLength = m_vData.size();
 	}
 
 std::vector<unsigned char> FMMP4Atom::DataGet()
