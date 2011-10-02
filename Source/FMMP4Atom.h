@@ -26,6 +26,10 @@ class FMMP4Atom
 		void NameSet();
 		std::string NameGet();
 		
+		void DataSet(std::vector<unsigned char> vData);
+		void DataAppend(std::vector<unsigned char> vData);
+		std::vector<unsigned char> DataGet();
+		
 		unsigned long LengthGet();
 
 		void ChildAdd(FMMP4Atom*  poAtom);
@@ -33,8 +37,8 @@ class FMMP4Atom
 		void ChildRemove(std::string sAtomName);
 		
 		FMMP4Atom* ChildGet(FMMP4Atom* poAtom);
-		FMMP4Atom* ChildGet(std::string sAtomName);
 		FMMP4Atom* ChildGet(std::vector<unsigned char> vData);
+		std::vector<FMMP4Atom*> ChildrenGet(std::string sAtomName);
 		
 	protected:
 		std::string m_sName;

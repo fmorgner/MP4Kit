@@ -9,7 +9,9 @@
 
 #include "FMMP4Atom.h"
 
-#pragma mark Construction and Deconstruction:
+#pragma mark 
+#pragma mark Construction and Destruction:
+#pragma mark 
 
 FMMP4Atom::FMMP4Atom()
 	{
@@ -34,7 +36,8 @@ FMMP4Atom::~FMMP4Atom()
 	}
 
 #pragma mark 
-#pragma mark Public accessors:
+#pragma mark General accessors:
+#pragma mark 
 
 std::string FMMP4Atom::NameGet()
 	{
@@ -45,6 +48,10 @@ unsigned long FMMP4Atom::LengthGet()
 	{
 	return m_nLength;
 	}
+
+#pragma mark 
+#pragma mark Children accessors:
+#pragma mark 
 
 void FMMP4Atom::ChildAdd(FMMP4Atom* poAtom)
 	{
@@ -60,13 +67,13 @@ FMMP4Atom* FMMP4Atom::ChildGet(FMMP4Atom* poAtom)
 	return *it;
 	}
 
-FMMP4Atom* FMMP4Atom::ChildGet(std::string sAtomName)
+FMMP4Atom* FMMP4Atom::ChildGet(std::vector<unsigned char> vData)
 	{
 	FMMP4Atom* foundAtom = NULL;
 	
 	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
 		{
-		if(((FMMP4Atom*)*it)->NameGet() == sAtomName)
+		if(equal(((FMMP4Atom*)*it)->DataGet().begin() , ((FMMP4Atom*)*it)->DataGet().end() , vData.begin()))
 			{
 			foundAtom = *it;
 			break;
@@ -76,3 +83,39 @@ FMMP4Atom* FMMP4Atom::ChildGet(std::string sAtomName)
 	return foundAtom;
 	}
 
+std::vector<FMMP4Atom*> FMMP4Atom::ChildrenGet(std::string sAtomName)
+	{
+	std::vector<FMMP4Atom*> vFoundAtoms = std::vector<FMMP4Atom*>();
+	
+	for(std::vector<FMMP4Atom*>::iterator it = m_vChildren.begin(); it != m_vChildren.end(); it++)
+		{
+		if(((FMMP4Atom*)*it)->NameGet() == sAtomName)
+			{
+			vFoundAtoms.push_back(*it);
+			}
+		}
+	
+	return vFoundAtoms;
+	}
+
+#pragma mark 
+#pragma mark Data accessors:
+#pragma mark 
+
+void FMMP4Atom::DataSet(std::vector<unsigned char> vData)
+	{
+	m_vData = vData;
+	}
+
+void FMMP4Atom::DataAppend(std::vector<unsigned char> vData)
+	{
+	for(std::vector<unsigned char>::iterator it = vData.begin(); it != vData.end(); it++)
+		{
+		m_vData.push_back(*it);
+		}
+	}
+
+std::vector<unsigned char> FMMP4Atom::DataGet()
+	{
+	return m_vData;
+	}
