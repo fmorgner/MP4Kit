@@ -22,24 +22,27 @@ class FMMP4Atom
 		 FMMP4Atom(std::string sName);
 		 FMMP4Atom(std::string sName, std::vector<unsigned char> vData);
 		~FMMP4Atom();
-	
-	public:
-		std::string NameGet();
 
+		void NameSet();
+		std::string NameGet();
+		
 		unsigned long LengthGet();
 
-		void        ChildAdd(FMMP4Atom*  poAtom);
+		void ChildAdd(FMMP4Atom*  poAtom);
+		void ChildRemove(FMMP4Atom* poAtom);
+		void ChildRemove(std::string sAtomName);
 		
-		FMMP4Atom*  ChildGet(FMMP4Atom*  poAtom);
-		FMMP4Atom*  ChildGet(std::string sAtomName);
-
+		FMMP4Atom* ChildGet(FMMP4Atom* poAtom);
+		FMMP4Atom* ChildGet(std::string sAtomName);
+		FMMP4Atom* ChildGet(std::vector<unsigned char> vData);
+		
 	protected:
 		std::string m_sName;
 		
 		std::vector<FMMP4Atom*>    m_vChildren;
 		std::vector<unsigned char> m_vData;
 		
-		int m_nLength;
+		unsigned long m_nLength;
 	};
 
 #endif
