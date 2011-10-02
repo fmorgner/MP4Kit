@@ -26,7 +26,8 @@ int main (int argc, const char * argv[])
 	std::cout << "address of atom1: " << &atom1 << std::endl;
 	std::cout << "address of atom2: " << &atom2 << std::endl;
 	std::cout << "address of atom22: " << &atom22 << std::endl;
-	std::cout << "address of atom3: " << &atom3 << std::endl << std::endl;
+	std::cout << "address of atom3: " << &atom3 << std::endl;
+	std::cout << "address of dataAtom: " << &dataAtom << std::endl << std::endl;
 	
 	atom1.ChildAdd(&atom2);
 	atom1.ChildAdd(&atom22);
