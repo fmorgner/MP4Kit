@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "FMMP4Atom.h"
+#include "CAtom.h"
 
 int main (int argc, const char * argv[])
 	{
@@ -16,12 +16,12 @@ int main (int argc, const char * argv[])
 	std::vector<unsigned char> dataVector = std::vector<unsigned char>(dataArray, dataArray+8);
 	std::vector<unsigned char> secondDataVector = std::vector<unsigned char>(dataArray, dataArray+8);
 	
-	FMMP4Atom atom1(" one");
-	FMMP4Atom atom2(" two");
-	FMMP4Atom atom22(" two");
-	FMMP4Atom atom3("thre");
+	CAtom atom1(" one");
+	CAtom atom2(" two");
+	CAtom atom22(" two");
+	CAtom atom3("thre");
 
-	FMMP4Atom dataAtom("four", dataVector);
+	CAtom dataAtom("four", dataVector);
 
 	std::cout << "address of atom1: " << &atom1 << std::endl;
 	std::cout << "address of atom2: " << &atom2 << std::endl;
@@ -34,14 +34,14 @@ int main (int argc, const char * argv[])
 	atom1.ChildAdd(&atom3);
 	atom1.ChildAdd(&dataAtom);
 
-	FMMP4Atom *atom3found = atom1.ChildGet(&atom3);
-	FMMP4Atom *dataAtomFound = atom1.ChildGet(secondDataVector);
-	std::vector<FMMP4Atom*> atom2and22found = atom1.ChildrenGet(" two");
+	CAtom *atom3found = atom1.ChildGet(&atom3);
+	CAtom *dataAtomFound = atom1.ChildGet(secondDataVector);
+	std::vector<CAtom*> atom2and22found = atom1.ChildrenGet(" two");
 
 	std::cout << "found " << atom3found << " for search for atom3"<< std::endl;
 	std::cout << "found " << dataAtomFound << " for search for atom containing secondDataVector"<< std::endl;
 
-	for(std::vector<FMMP4Atom*>::iterator it = atom2and22found.begin(); it != atom2and22found.end(); it++)
+	for(std::vector<CAtom*>::iterator it = atom2and22found.begin(); it != atom2and22found.end(); it++)
 		{
 		std::cout << "found " << *it << " for search for atom with name being \" two\"" << std::endl;
 		}
