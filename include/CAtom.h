@@ -24,21 +24,21 @@ class CAtom
     ~CAtom();
 
     void NameSet();
-    std::string NameGet();
+    std::string NameGet() const;
 
     void DataSet(std::vector<unsigned char> vData);
     void DataAppend(std::vector<unsigned char> vData);
-    std::vector<unsigned char> DataGet();
+    std::vector<unsigned char> DataGet() const;
 
-    unsigned long LengthGet();
+    unsigned long LengthGet() const;
 
     void ChildAdd(CAtom*  poAtom);
     void ChildRemove(CAtom* poAtom);
     void ChildRemove(std::string sAtomName);
 
-    CAtom* ChildGet(CAtom* poAtom);
-    CAtom* ChildGet(std::vector<unsigned char> vData);
-    std::vector<CAtom*> ChildrenGet(std::string sAtomName);
+    CAtom* ChildGet(CAtom* poAtom) const;
+    CAtom* ChildGet(std::vector<unsigned char> vData) const;
+    std::vector<CAtom*> ChildrenGet(std::string sAtomName) const;
 
   protected:
     std::string m_sName;
